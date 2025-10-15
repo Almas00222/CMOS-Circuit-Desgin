@@ -52,42 +52,41 @@ If we observe the previous graph is left shifted slightly. This happens because 
 ### L3 Labs Sky130 SPICE simulation for CMOS
 We now get the VTC characteristics
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/3e6c8b58-05e8-4c43-94a8-e1f8323a9e00" />
+![Alt text](21.png)
 We are using both pfet and nfet for CMOS inverter. We can see that W/L ratio of pmos is 2.33 times greater than that of nmos. And we will be sweeping Vin from 0 to 1.8V with step isze of 0.01V and plotting the Vout.</br>
 
-<img width="1913" height="1078" alt="image" src="https://github.com/user-attachments/assets/a9aa02e7-a3f0-4485-9b07-129fd8260d03" />
+![Alt text](22.png)
 To get the plot type `ngspice` and `plot out vs in`.
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/2b2cd0ab-86fa-43cb-aae5-6192e7c52c10" />
+![Alt text](23.png)
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/e71074c8-50af-44c1-9316-790007b9394e" />
+![Alt text](24.png)
 
 Now we need to know the Switching Threshold from this graph, it is the point when Vin=Vout.</br>
 To zoom in the curve; press righ mouse button + hold it.</br>
 
-<img width="1918" height="1076" alt="image" src="https://github.com/user-attachments/assets/f23c8b99-6ef4-49e3-860b-2e0c324f4320" />
+![Alt text](25.png)
 So switching threshold for W/L=2.3 is around 0.876V</br>
 
-<img width="280" height="30" alt="image" src="https://github.com/user-attachments/assets/816fa465-de21-4d8d-bff4-fb79ab059723" />
+![Alt text](26.png)
 
 We will now see the transient analysis:</br>
 For that we will go inside the tansient SPICE file for day3</br>
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/fe3e84fa-8511-4f02-917e-570de93216d9" />
+![Alt text](27.png)
 We can see that it is for typical corner as before and the W/L is also same. But now we taking transient pulse from 0v to 1V with shift of 0 with rise time and fall time being 0.1ns and 0.1ns respectively, pulse width of 2ns and total time period of 4ns. Let us run this.</br>
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/93a365ad-7eff-4172-921b-d0301c2978f7" />
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/786bea0f-e506-4475-b099-575545bd0685" />
+![Alt text](28.png)
+![Alt text](29.png)
 
 So for rise delay and fall delay, we need to consider 50% of output curve i.e. at 0.9V; out-in.</br>
-<img width="305" height="67" alt="image" src="https://github.com/user-attachments/assets/9e8f888e-74a1-465c-8cb5-71ee3302b0f7" />
+![Alt text](30.png)
 
 Therefore **Rise delay = 2.482ns-2.15ns = 0.333ns**
 
 For fall delay, consider while falling.</br>
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/4c675f5c-cef5-4f78-8692-67398bbf94eb" />
-<img width="315" height="71" alt="image" src="https://github.com/user-attachments/assets/73197af2-d7b5-4545-a2b6-aebde88f7f20" />
+![Alt text](31.png)
 Therefore **Fall Delay = 4.334ns-4.050ns = 0.285ns**
 
 ## Static behaviour evaluation-CMOS inverter robustness-Switching Threshold
