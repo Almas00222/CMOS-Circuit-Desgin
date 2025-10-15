@@ -3,60 +3,60 @@
 ## Introduction to Circuit Design and Spice Simulations
 
 ### L1 Why do we need SPICE simulations?
-A circuit design includes PMOS and NMOS tied together in such a fashion that they result into logic gates such as NAND, NOR, OR, AND etc.</br>
+The circuit includes PMOS and NMOS gates connected to form logic gates such as NAND, NOR, OR, AND, etc.</br>
 
 <img width="542" height="526" alt="image" src="https://github.com/user-attachments/assets/bf9b9eed-3cf4-41be-bcfe-8b3ea7eadcb0" />
 
-The above inverter will have the following charactersitics, we will do the SPICE simulations to find the delay and so we will get the W/L ratio of the particular transistor.</br>
+The above inverter will have the following characteristics. We'll run a SPICE simulation to determine the delay and thus obtain the W/L ratio for a specific transistor.</br>
 
 <img width="965" height="695" alt="image" src="https://github.com/user-attachments/assets/e2264a62-e4b1-4506-bb0f-eded09d303f3" />
 
-**WHy do we need SPICE?**</br>
-The clock Tree synthesis, crosstalks, and timing are built on SPICE (Simulation Program with Integrated Circuit Emphasis), without SPICE there won't be delays and if there are no delays physical design flow, crosstalk won't make any sense.</br>
+**WHY DO WE NEED SPICE?**</br>
+The clock tree synthesis, crosstalk, and clocking are all built using SPICE (a simulation program with an emphasis on integrated circuits). Without SPICE, there would be no delay, and without delay in the physical design process, crosstalk is meaningless.</br>
 
-Let us say we have done some Clock Tree Synthesis of the circuit shown below with bufffers with different capacitive load at the output.</br>
+Let's assume we've synthesized a clock tree for the circuit shown below, with buffers and varying capacitive loads at the output.</br>
 
 <img width="1206" height="392" alt="image" src="https://github.com/user-attachments/assets/a0dbe0ed-6981-4966-8d1d-7bf4d223ef61" />
 
-After the SPICE simulation we get a "Delay Table", which includes input slew and output load. The intersection value of Input slew and Output load is considered as Delay. Delay tables for both level 1 and level 2 buffers have been shown. This is calculated by circuit design and simulation</br>
+After the SPICE simulation, we obtain a "Delay Table," which includes the input step and output load. The intersection of the input step and output load is considered the delay. Delay tables for level 1 and level 2 buffers are presented. They were calculated using schematic design and simulation.</br>
 
 <img width="1410" height="668" alt="image" src="https://github.com/user-attachments/assets/422a8a28-f4e6-469a-97d4-535f02762e3d" />
 
-The source of the above Delay Tables comes from circuit design using SPICE simulations. SPICE simulations involves characterisation of any CMOS logic.</br>
+The source of the delay tables above is schematic design using SPICE simulation. SPICE simulation is used to characterize any CMOS logic.</br>
 
-### L2 Introduction to basic element in circuit design-NMOS
-An NMOS transistor consist of P-type substrate, heavily doped with n+ region. There is an isolated region which isolates the transistor from other transistors. The n+regions are Source and Drain. Above itthere is an oxide layer, and top of it is metal deposition which is the GAte termianal.</br>
+### L2 Introduction to the Basic Element of Circuit Design – the NMOS Transistor
+The NMOS transistor consists of a p-type substrate heavily doped with an n+ region. It has an isolation region that isolates the transistor from other transistors. The N+ regions are the source and drain. Above this is an oxide layer, and above that is a metal layer, which is the gate terminal.</br>
 
 <img width="1195" height="507" alt="image" src="https://github.com/user-attachments/assets/fafb4e04-8d70-42dd-bae3-7570c38be028" />
 
 **Threshold Voltage**
-This is a very important term, all the characterisation depends on threshold voltage.</br>
-At first we will keep the Vgs=0, means source and drain terminal both are grounded. Body is also ground. P-substrate and n+ act as PN junction diode and as there is no potential so there is a high resistance. No channel formation is there.</br>
+This is a very important term; all characteristics depend on the threshold voltage.</br>
+Initially, we'll assume Vgs = 0, meaning the source and drain terminals are grounded. The case is also grounded. The P-substrate and N+ junction act as a PN junction diode, and since there is no potential, the resistance is high. Channels are not formed.</br>
 
 <img width="1322" height="528" alt="image" src="https://github.com/user-attachments/assets/8e2fee4c-8616-4886-859c-d6c08d166541" />
 
-Now we will apply a positive potential; Vgs>0. We will see gate is now positively charged and due to this there will be Accumulation of negative charges at the surface of substrate.</br>
+Now we apply a positive potential; Vgs>0. We'll see that the gate is now positively charged, causing negative charges to accumulate on the substrate surface.</br>
 
 <img width="1345" height="555" alt="image" src="https://github.com/user-attachments/assets/ef79f61f-5540-4ffb-aec8-06fa9354759a" />
 
-### L3 Strong inversion and threshold voltage
-Due to Accumulation of negatuve charges, there will be formation of Depletion Region, depleting of it's majority carriers i.e positive carriers here.</br>
+### L3 High Inversion and Threshold Voltage
+Due to the accumulation of negative charges, a depletion region is formed, which will deplete the majority of charge carriers, i.e., positive carriers.</br>
 
 <img width="831" height="402" alt="image" src="https://github.com/user-attachments/assets/335a3525-699e-4c66-8161-2201df2b9070" />
 
-Now we will increase the Gate voltage further, we will see that the positive charge carriers will be repelled and there will be increase of Depletion Width. On further increase of Gate voltage we will reach at a point where the surface gets inverted into an n-type material, this is called "Surface Inversion" or "Stronf Inversion". The gate voltage of Vgs voltage where Strong Inversion happens is called "Threshold Voltage".</br>
+Now we'll increase the gate voltage even further. We'll see that positive charge carriers will repel each other, and the width of the depletion region will increase. As the gate voltage increases further, we'll reach a point where the surface inverts into an n-type material. This is called "surface inversion" or "strong inversion." The gate voltage Vgs at which strong inversion occurs is called the "threshold voltage."</br>
 
 <img width="1332" height="551" alt="image" src="https://github.com/user-attachments/assets/03776359-fd17-4e04-9fd5-9212422217df" />
 
-What will happen if we further increase Vgs? As there are no more negative charges that will be attracted towards the positive Vgs, The negative charges from n+ region will get attracted and so there will be a formation of channel at the surface.</br>
+What happens if we increase Vgs even more? Since there are no longer any negative charges that could be attracted to the positive potential Vgs, negative charges from the n+ region will be attracted, and a channel will form on the surface.</br>
 
 <img width="1358" height="573" alt="image" src="https://github.com/user-attachments/assets/f8c47353-dbf7-4026-b4d9-89ebff6cd24d" />
 
 <img width="1350" height="618" alt="image" src="https://github.com/user-attachments/assets/183a52c0-755d-43c6-9731-9043b047e679" />
 
-Now there is a possibility of current from Source to Drain. The channel has bridged the gap between source to drain regions. But as there is no Drain voltage so the elctrons will not move, this is "Cut Off Region" now.</br>
+Current can now flow from the source to the drain. The channel spans the gap between the source and drain regions. But since there's no drain voltage, electrons don't move, and this is now the "cutoff region."</br>
 
-We will see what happens when we change the potential of Body terminal.</br>
+Let's see what happens if we change the potential of the "Body" pin.</br>
 
 <img width="1311" height="532" alt="image" src="https://github.com/user-attachments/assets/0aa83b1f-12c2-4765-bd3f-caa35daac877" />
 
@@ -147,76 +147,77 @@ We need to find the impact of Vgs and Vds on the drain current equation. We will
 
 <img width="591" height="172" alt="image" src="https://github.com/user-attachments/assets/d9735c9f-3a26-49aa-bc9b-62e64d65babe" />
 
-Now the main question arises, How do we calculate Id for different values of 'Vgs' and at every value of 'Vgs', sweep Vds till (Vgs-Vt) using linear equation for Id?</br>
-For this we need to do SPICE simulations.</br>
+Now the main question arises: how to calculate Id for different Vgs values ​​and, at each Vgs value, scale Vds to (Vgs - Vt) using the linear equation for Id?
 
-### L5 Pinch-off region condition
-There is also a Region of operation when Drain-source voltage exceeds the value (Vgs-Vt), the region of operation is called "Saturation Region".
-We know the channel voltage is Vgs-Vds. Now, we will increase the Vds.</br>
+To do this, we need to perform a SPICE simulation.
+
+### L5 Cutoff Region Condition
+There is also a region of operation where the drain-source voltage exceeds (Vgs - Vt). This region of operation is called the "saturation region."
+We know that the channel voltage is equal to Vgs - Vds. Now let's increase Vds.</br>
 
 <img width="1367" height="625" alt="image" src="https://github.com/user-attachments/assets/d29ecff9-3641-49c7-9348-fa7537ff7118" />
 
-When Vgs-Vds is greater than Vt, there will be a conducting channel.</br>
-When Vgs-Vds is equal to Vt, we will see at drain side, just Inversion has happened as it is equal to Vt, so channel will start disappearing at drain side.</br>
+When Vgs-Vds is greater than Vt, a conductive channel is formed.</br>
+When Vgs-Vds equals Vt, an inversion occurs on the drain side, since Vds equals Vt, so the channel on the drain side begins to disappear.</br>
 
 <img width="1380" height="611" alt="image" src="https://github.com/user-attachments/assets/b51e39ef-093f-463d-8faa-7c6bb23cc68d" />
 <img width="1352" height="621" alt="image" src="https://github.com/user-attachments/assets/8d325d80-10d4-47e3-aed0-2caaf0715a36" />
 
-Now when the channel starts to disappear, is termed as "Pinch off region"</br>
+Now, when the channel begins to disappear, this is called the "clipping region."</br>
 
 <img width="1492" height="602" alt="image" src="https://github.com/user-attachments/assets/40146460-641e-4f89-a950-acebeba103e3" />
 
-When Vgs-Vds<Vt, we will not see any channel present at drain side.</br>
+When Vgs-Vds<Vt, we won't see any channels on the drain side.</br>
 
 <img width="1310" height="582" alt="image" src="https://github.com/user-attachments/assets/e62baac0-53e1-4c61-a9d6-e26a0a4b8ec1" />
 
-This condition is termed as "Saturation region", when the mosfet is saturated and cannot do anything further.</br>
+This state is called the "saturation region," where the MOSFET is saturated and cannot conduct further.</br>
 
 <img width="391" height="102" alt="image" src="https://github.com/user-attachments/assets/4c0aca6a-e230-47d1-9e30-9416785487be" />
 
-### L6 Drain current model for saturation region of operation
-In saturation region, the channel voltage will remain constant as 'Vgs-Vt', and the drain current will not depend on Vds.</br>
-To get drain current equation in saturation region we will replace Vds as Vgs-Vt.</br>
+### L6 Drain Current Model for the Saturation Region
+In the saturation region, the channel voltage will remain constant, as Vgs - Vt, and the drain current will be independent of Vds.</br>
+To obtain the drain current equation in the saturation region, replace Vds with Vgs-Vt.</br>
 
 <img width="467" height="360" alt="image" src="https://github.com/user-attachments/assets/3df0adef-9616-499c-97de-477da403178b" />
 
-We can now see that according to the equation, the mosfet acts as perfect current source. But this is not true, when we increase Vds we will that Depletion region at drain increases and so channel length further reduces.Therefore, we see a slight dependency of Vds over Id</br>
+Now we see that, according to the equation, the MOSFET acts as an ideal current source. But this is incorrect: as Vds increases, the drain depletion region increases, further reducing the channel length. Therefore, we observe a slight dependence of Vds on Id.</br>
 
 <img width="1476" height="586" alt="image" src="https://github.com/user-attachments/assets/899bf2cb-f752-43ad-8750-5fc9d6b62f50" />
 
-This is called "Channel Length Modulation".</br>
+This is called "channel length modulation."</br>
 
 <img width="876" height="168" alt="image" src="https://github.com/user-attachments/assets/b3d388c1-7074-49c9-a019-7d0ff212271f" />
 
 ## Introduction to SPICE
 
-### L1 Basic SPICE setup
-First let us look into the SPICE setup.</br>
+### Basic SPICE L1 Setup
+First, let's look at the SPICE setup.</br>
 
 <img width="1412" height="611" alt="image" src="https://github.com/user-attachments/assets/5872cd9a-70d1-46cf-9fe4-f5247f8d3415" />
 
-Some parameters are constant, and directly coming from the foundaries we don't have to derive them. These are circiled in yellow.</br>
+Some parameters are constant, and since they come directly from the founders, we don't need to display them. They are circled in yellow.</br>
 
 <img width="1313" height="591" alt="image" src="https://github.com/user-attachments/assets/c7f8c503-a596-40a7-85e8-b00b1eef4cf9" />
 
 <img width="922" height="536" alt="image" src="https://github.com/user-attachments/assets/260175cb-7abc-4fc6-a332-6b73b7954cae" />
 
-So, when we feed the SPICE model parameters and SPICE netlist intp the SPICE software, we get the device characteristics in terms of Id vs Vds with different values of Vgs.</br>
+So, when we pass the SPICE model parameters and the SPICE netlist to the SPICE program, we get the device characteristics in terms of Id and Vds with different Vgs values.</br>
 
 **SPICE Netlist**
-We need to feed the device into SPICE engine in certain manner, the circuit equivalent of given mosfet is as shown below. </br>
+We need to pass the device to SPICE Engine with a specific Thus, the circuit equivalent of this MOSFET is shown below. </br>
 
-<img width="1262" height="585" alt="image" src="https://github.com/user-attachments/assets/ec870ea4-f7ce-4e99-939a-d6e8646c499e" />
+<img width="1262" height="585" alt="image" src="https://github.com/user-attachments/assets/ec870ea4-f7ce-4e99-939a-d6e8646c499e" ​​​​/>
 
-### L2 Circuit description in SPICE syntax
-Now we will write the syntax for this particular circuit in SPICE netlist. To do that we need to follow some steps-
-* **Define Nodes**
-  
-  <img width="653" height="410" alt="image" src="https://github.com/user-attachments/assets/726a94e6-1333-41dc-a4c0-d9c766b00f9b" />
+### Description of the L2 circuit in SPICE syntax
+Now let's write the syntax for this specific circuit into a SPICE netlist. To do this, we need to complete a few steps:
+* **Define the nodes**
 
-* **Give names to the node**
+<img width="653" height="410" alt="image" src="https://github.com/user-attachments/assets/726a94e6-1333-41dc-a4c0-d9c766b00f9b" />
+
+* **Name the nodes**
 * **Write the code**
-  `since modfet has 4 terminals, it is lying between 4 different nodes, similarly resistor is lying between 2 nodes.`
+`Since the modfet has 4 pins, it sits between 4 different nodes, similarly, the resistor sits between 2 nodes.`
 
 <img width="1307" height="418" alt="image" src="https://github.com/user-attachments/assets/fe360627-afb9-41d7-917d-95b7ac8ca6b7" />
 <img width="1211" height="371" alt="image" src="https://github.com/user-attachments/assets/5d8f624b-296a-499a-9cc2-c9fd0946fb52" />
@@ -264,45 +265,45 @@ Now, we need to sweep the Vgs and Vds for SPICE simulations.</br>
 * `git clone https://github.com/kunalg123/sky130CircuitDesignWorkshop.git`
   inside the `sky130_fd_pr` directory we will see cells, models and tech files.</br>
 
-  ![Alt text](1.png)
+![Alt ​​​​text](1.png)
 
-  Inside the `cells` files we will see `nfet` and `pfet` cells, these cells we will be using.</br>
+In the `cell` files, we'll see the `nfet` and `pfet` cells we'll be using.</br>
 
-  Inside `nfet` we will see spice libraries at different corners, we will select one such typical corner.</br>
-  
-  We will see all the model paramteres required for the process.</br>
-  ![Alt text](2.png)
-  
-  We have different W and L values which pre-described. For simulation we need to take any one value which is present inside the library.</br>
+In the `nfet` file, we'll see the SPICE libraries at various angles. Let's choose one of these typical angles.</br>
 
-  ![Alt text](3.png)
+We'll see all the model parameters needed for the process.</br>
+![Alt ​​​​text](2.png)
 
-  Now go inside `models` --> `lib.spice` file. We will see library files which are present for nfet and pfet. The corner files are present, include Typical, slow-fast and fast-fast corner files.</br>
+We have various values ​​for W and L, which are described in advance. For the simulation, we need to select any value from the library.</br>
 
-  ![Alt text](4.png)
+![Alt ​​​​text](3.png)
 
-Inside `design` --> open day1 file.</br>
+Now go to the `models` -> `lib.spice` file. We'll see the library files for nfet and pfet. Angle files are available, including typical angle files, slow-fast angle files, and fast-fast angle files.</br>
 
-  ![Alt text](5.png)
-  
-Above we see Vdd varying from 0 to 1.8 volts with step size of 0.1V and Vgs sweeping from 0 to 1.8V and with step size of 0.2V
+![Alt ​​​​text](4.png)
 
-Let us do the spice simulations:
-  ![Alt text](6.png)
-  
-  ![Alt text](7.png)
+Inside `design` --> open the file day1.</br>
 
-We will get the plot of Id vs Vds at different Vgs values.</br>
+![Alt ​​​​text](5.png)
 
-  ![Alt text](8.png)
-  ![Alt text](10.png)
+Above, we see Vdd changing from 0 to 1.8 V in 0.1 V steps, and Vgs changing from 0 to 1.8 V in 0.2 V steps.
 
-To check the value of Id for corresponding Vds and Vgs, just left click and see.</br>
+Let's run a SPICE simulation:
+![Alt ​​​​text](6.png)
 
-  ![Alt text](9.png)
+![Alt ​​​​text](7.png)
 
-### L5 SPICE lab with Sky130 models
-If we go inside `models` folder, we will see `all.spice` file. If we open it we will see the scale of Width and Length.</br>
-  ![Alt text](11.png)
+We'll get a plot of Id versus Vds for different Vgs values.</br>
 
-We can see that W and L values are in microns.</br>
+![Alt ​​​​text](8.png)
+![Alt ​​text](10.png)
+
+To check the Id value for the corresponding Vds and Vgs, simply left-click and see.</br>
+
+![Alt ​​​​text](9.png)
+
+### SPICE Lab L5 with Sky130 Models
+If we go to the `models` folder, we'll see the `all.spice` file. Opening it, we see a width and length scale.</br>
+![Alt ​​​​text](11.png)
+
+We see that the W and L values ​​are in microns.</br>
