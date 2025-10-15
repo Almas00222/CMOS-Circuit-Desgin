@@ -71,6 +71,7 @@ We are taking the W/L ratios of PMOS to NMOS as 2.77 and sweeping the Vin from 0
 ![Alt text](33.png)
 ![Alt text](34.png)
 ![Alt text](35.png)
+![Alt text](36.png)
 
 We will take the point where the slope is -1 ; x axis will give VIL and VIH, whereas y axis will give VOH and VOL.
 
