@@ -7,10 +7,10 @@ We have seen the curve for Id vs Vds, for different values of Vgs.</br>
 
 <img width="1297" height="658" alt="image" src="https://github.com/user-attachments/assets/c10158ab-7588-4862-96a0-19125d4a3e25" />
 
-In the above graph the area left of curve; Vds=Vgs-Vt is Linear region as current is increasing linearly, the area right is Saturation region with slight increase in current due to velocity saturation and below is the Cut off region.Also this case is when the channel length is large.</br>
+In the above graph the area left of curve; Vds=Vgs-Vt is Linear region as current is increasing linearly, the area right is Saturation region with slight increase in current due to velocity saturation and below is the Cut off region. Also this case is when the channel length is large.</br>
 
-Now we are taking different W and L, but the ration of W/L is same as previous, so the Id should not change. But this is not the case practically.</br>
-Below is the spice deck, where only the values of W and L is changed, rest everything remains same.</br>
+Now we are taking different W and L, but the ratio of W/L is same as previous, so the Id should not change. But this is not the case practically.</br>
+Below is the spice deck, where only the values of W and L are changed, rest everything remains same.</br>
 
 <img width="872" height="442" alt="image" src="https://github.com/user-attachments/assets/09eec98c-92a0-409e-a6c5-5b2a18e8289d" />
 
@@ -20,7 +20,7 @@ Let us compare the two simulations we did.
 <img width="1385" height="547" alt="image" src="https://github.com/user-attachments/assets/0dd21cb8-3868-4074-909f-accde3fa2556" />
 
 **There are some Observations:**
-* **Observation 1**- If we see Id values for different Vgs and for Vds=2.5V, there is a quadratic dependency of Id on Vgs. Whereas for short channel device, at Vds=2.5V, the current is increasing linearly due to velocity saturation.</br>
+* **Observation 1** - If we see Id values for different Vgs and for Vds=2.5V, there is a quadratic dependency of Id on Vgs. Whereas for short channel device, at Vds=2.5V, the current is increasing linearly due to velocity saturation.</br>
 
 <img width="1385" height="547" alt="image" src="https://github.com/user-attachments/assets/3eb690d9-a38c-4c97-a9b2-2b0b5148ff63" />
 <img width="747" height="540" alt="image" src="https://github.com/user-attachments/assets/7f388d3d-9e7c-45ad-b70b-65a1d846f961" />
@@ -29,7 +29,7 @@ Now we will plot graph of Id vs Vgs and sweeping Vds or keeping Vds constant = 2
 
 <img width="855" height="442" alt="image" src="https://github.com/user-attachments/assets/658d2ba4-4e01-4e20-9a01-e949f3f88cb9" />
 
-The syntax explains that what will be there on left hand side will be sweeped at every value on right hand side. For example here for every value of Vdd, Vin will be sweeped. The plot we get is quadratic, it is only when Vds=2.5V </br>
+The syntax explains that what will be there on left hand side will be swept at every value on right hand side. For example here for every value of Vdd, Vin will be swept. The plot we get is quadratic, it is only when Vds=2.5V </br>
 
 <img width="776" height="641" alt="image" src="https://github.com/user-attachments/assets/fd8321e8-6235-4c84-aa42-411747b0f599" />
 
@@ -55,7 +55,7 @@ Velocity saturation happens for higher gate-source voltages.</br>
 <img width="987" height="473" alt="image" src="https://github.com/user-attachments/assets/cbe1cdbb-8b18-4c19-97c6-be3e4244fb34" />
 
 Let us take Vgs-Vt=Vgt because we will be taking Vgs as large values. Current equation we will be using as shown above, For lower values of Vds we will neglect the 'lambda' term.</br>
-There is one more technology paramter which is "Vdsat", it is the velocity of gate when the device just enters the Velocity saturation region.</br>
+There is one more technology parameter which is "Vdsat", it is the velocity of gate when the device just enters the Velocity saturation region.</br>
 <img width="831" height="212" alt="image" src="https://github.com/user-attachments/assets/2e70d7d1-4891-4488-90e8-93f9b5f1322c" />
 
 <img width="1026" height="536" alt="image" src="https://github.com/user-attachments/assets/724c8f7e-e772-4006-9f39-05d7a8e06b56" />
@@ -68,7 +68,7 @@ There is one more technology paramter which is "Vdsat", it is the velocity of ga
 
 In the above equation, it seems when W is constant and L is lowered then Id should increase, But it is not so practically.</br>
 
-* **Observation 2** - The saturation current for lower nodes is low instead of being high. This is because Velocity saturation tends to saturate the device early so the peak current we see for lower nodes is much lesser than for higher nodes.</vr>
+* **Observation 2** - The saturation current for lower nodes is low instead of being high. This is because Velocity saturation tends to saturate the device early so the peak current we see for lower nodes is much lesser than for higher nodes.</br>
 <img width="1370" height="576" alt="image" src="https://github.com/user-attachments/assets/82010154-16a3-4079-a57c-e5a7435b9507" />
 
 ### L5 Labs Sky130 Id-Vgs
@@ -103,6 +103,8 @@ In the curve we can see that Vt is the value when current increases drastically 
 
 It comes at around 0.76V.
 
+---
+
 ## CMOS voltage transfer characteristics (VTC)
 
 ### L1 MOSFET as a switch
@@ -132,7 +134,7 @@ Let us give the naming convention of the CMOS
 
 <img width="506" height="618" alt="image" src="https://github.com/user-attachments/assets/7225993f-5a53-4456-9959-3cdf52d77960" />
 
-ALso the current in both the condition is Idsn(drain to source for NMOS) and Idsp(Drain to source for PMOS)
+Also the current in both the condition is Idsn (drain to source for NMOS) and Idsp (Drain to source for PMOS).
 And **Idsp = -Idsn**, both are opposite in direction to each other.
 
 ### L3 PMOS/NMOS drain current vs drain voltage
@@ -142,7 +144,7 @@ Now if we talk about the curve between Idsn Vs Vdsn and Idsp Vs Vdsp, it is as s
 
 <img width="897" height="432" alt="image" src="https://github.com/user-attachments/assets/2e55422f-9659-4ce7-b6ac-b1fe6d41d1a0" />
 
-### L4 Step1- Convert PMOS gate-source-voltage to Vin
+### L4 Step1 - Convert PMOS gate-source-voltage to Vin
 We have seen various internal voltages, but actually in terms of user's perspective we can't see the internal voltages and only see the external Vin and Vout. From these we calculate the VTC and eventually we get to know the delay.</br>
 
 **Now we will see the steps to obtain Voltage Transfer Characteristics(VTC) for static CMOS inverter:**
@@ -150,13 +152,13 @@ We have seen various internal voltages, but actually in terms of user's perspect
 * We will fix the Vgs values as shown below
   <img width="372" height="237" alt="image" src="https://github.com/user-attachments/assets/081d616c-e17f-4741-8a96-0d5eae2b2b9a" />
   
-* We know that Vgsp= Vin-Vdd, So we get the above values.So we get Vin = Vgsp+Vdd, we are trying to convert all the voltages as function of Vin and Vout.
+* We know that Vgsp= Vin-Vdd, So we get the above values. So we get Vin = Vgsp+Vdd, we are trying to convert all the voltages as function of Vin and Vout.
 * We will try to plot the graph of PMOS in terms of Idsn, the plot will be as shown below. We can see that the corresponding Vin value of Vgsp is being plotted as shown in the above table.
 
   <img width="871" height="443" alt="image" src="https://github.com/user-attachments/assets/cd415d3f-042b-460e-8314-4bb28d50d663" />
 
-### L5 Step2 & Step3- Convert PMOS and NMOS drain-source-voltage to Vout
-Now we be converting the Vdsp and function of output voltage Vin. We know **Vdsp = Vout-Vdd**.</br>
+### L5 Step2 & Step3 - Convert PMOS and NMOS drain-source-voltage to Vout
+Now we be converting the Vdsp as a function of output voltage Vin. We know **Vdsp = Vout-Vdd**.</br>
 Let us convert Vdsp into Vout. So to get Vout there is a shift of Vdd towards left hand side.</br>
 
 <img width="1333" height="391" alt="image" src="https://github.com/user-attachments/assets/c9709e57-c876-4521-9ff6-88fb68f9927c" />
@@ -174,7 +176,7 @@ It is actually simple as Vgsn = Vin and Vdsn = Vout, directly we can get the gra
 <img width="410" height="287" alt="image" src="https://github.com/user-attachments/assets/e434b1a5-c734-43c2-9565-19714e01f38e" />
 <img width="892" height="380" alt="image" src="https://github.com/user-attachments/assets/143a185e-09e5-4c51-8964-eae5b983c47c" />
 
-### L6 Step4- Merge PMOS-NMOS load curves and plot VTC
+### L6 Step4 - Merge PMOS-NMOS load curves and plot VTC
 We will now merge the above two curves and obtain the voltage transfer characteristics(VTC) for CMOS inverter.
 
 <img width="1340" height="412" alt="image" src="https://github.com/user-attachments/assets/e06060aa-bb37-4abc-a225-7cce4569c224" />
