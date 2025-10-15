@@ -39,25 +39,18 @@ There is energy lowering for low supply voltage.
 ### L3 Sky130 Supply variation Labs
 We will calculate the supply variation.
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/94a3c1ba-3139-4838-b302-2320ce3f643e" />
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/56419121-44bb-4f73-9084-06b1503b6544" />
+![Alt text](37.png)
 
 The initial supply voltage is 1.8V and we are reducing it with the step of 0.2V, so there will be 6 iterations.
 
-<img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/af291d32-1484-4d6b-8291-dabc5b70df65" />
+![Alt text](39.png)
 We will calculte the Gain: </br>
 
 * **Vdd=1.8V** </br>
 
-  <img width="292" height="61" alt="image" src="https://github.com/user-attachments/assets/0f2c56cc-5fb4-4c1e-9e49-0e7ee75b964b" />
+![Alt text](40.png)
 
   |Gain| = 7.6229 </br>
-
-* **Vdd=0.8V**
-
-  <img width="267" height="52" alt="image" src="https://github.com/user-attachments/assets/112695f4-b69a-4c76-bd41-a066a08ac6b7" />
-
-  |Gain| = 9.3844 </br>
 
 ## Static behaviour evaluation-CMOS inverter robustness-Device variation
 
@@ -122,12 +115,12 @@ We will draw some conclusions from the characteristics we got.
 ### L5 Sky130 device variations labs
 We will now do the SPICE simulations for the device variations</br>
 
-<img width="1912" height="1079" alt="Screenshot 2025-10-03 231604" src="https://github.com/user-attachments/assets/5b26708d-6351-4aa8-b2d2-758a174a6f8b" />
-<img width="1919" height="1079" alt="Screenshot 2025-10-03 231715" src="https://github.com/user-attachments/assets/518ac3f8-9460-49ab-943e-e09cc37ca4ac" />
+![Alt text](41.png)
 
 We can see that the width of PMOS is quite large than that of NMOS. SO it is clearly strong PMOS and weak NMOS case. The Vm will be right shifted.</br>
 
-<img width="1919" height="1079" alt="Screenshot 2025-10-03 231914" src="https://github.com/user-attachments/assets/ef15e759-7036-445a-b5b1-53b0df38050a" />
+![Alt text](42.png)
 
-<img width="1919" height="1079" alt="Screenshot 2025-10-03 232247" src="https://github.com/user-attachments/assets/841f9eea-395a-4213-93c5-8e5a06de59f0" />
+![Alt text](43.png)
 
+![Alt text](44.png)
